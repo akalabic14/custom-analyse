@@ -6,7 +6,7 @@ module.exports = (data) => {
             nextUrls: [],
             exitCode: 0
         }
-        let nextUrls = html.match(/href="(\/[a-zA-Z1-9\/\-]*)"/g) ? html.match(/href="(\/[a-zA-Z1-9\/\-]*)"/g).map(href => href.match(/\/[a-zA-Z1-9\/\-]*/g)[0]).map(href => `${domain}${href.slice(1)}`) :$
+        let nextUrls = html.match(/href="(\/[a-zA-Z1-9\/\-]*)"/g) ? html.match(/href="(\/[a-zA-Z1-9\/\-]*)"/g).map(href => href.match(/\/[a-zA-Z1-9\/\-]*/g)[0]).map(href => `${domain}${href.slice(1)}`) :[];
         nextUrls = [...new Set(nextUrls)];
         result.nextUrls = nextUrls;
         let ponavljanja = html.toLowerCase().match(/vucic|vučić/gi) ? html.toLowerCase().match(/vucic|vučić/gi).length : 0;
